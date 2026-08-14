@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NextRep</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>NextRep</h1>
+      <p>Enter your last performance to get a target for your next session.</p>
+
+      <form id="calculator-form">
+        <p>
+          <label for="unit">Weight unit</label>
+          <select id="unit" name="unit">
+            <option value="kg">kg</option>
+            <option value="lb">lb</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="weight">Current weight</label>
+          <input id="weight" name="weight" type="number" min="0" step="any" required />
+          <span data-weight-unit>kg</span>
+        </p>
+
+        <p>
+          <label for="reps">Reps achieved</label>
+          <input id="reps" name="reps" type="number" min="0" step="1" required />
+        </p>
+
+        <p>
+          <label for="min-reps">Minimum target reps</label>
+          <input id="min-reps" name="minReps" type="number" min="1" step="1" required />
+        </p>
+
+        <p>
+          <label for="max-reps">Maximum target reps</label>
+          <input id="max-reps" name="maxReps" type="number" min="1" step="1" required />
+        </p>
+
+        <p>
+          <label for="increment">Weight increment</label>
+          <input id="increment" name="increment" type="number" min="0" step="any" required />
+          <span data-weight-unit>kg</span>
+        </p>
+
+        <button type="submit">Calculate</button>
+        <button type="reset">Reset</button>
+      </form>
+
+      <section aria-labelledby="recommendation-heading" aria-live="polite">
+        <h2 id="recommendation-heading">Recommendation</h2>
+        <p id="recommendation">Your next target will appear here.</p>
+        <p id="recommendation-reason"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
